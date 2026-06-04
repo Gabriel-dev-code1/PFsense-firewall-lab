@@ -22,29 +22,48 @@ pfSense Firewall (192.168.56.2)
 
 ↓
 
-Ubuntu Server (192.168.56.110)
+Ubuntu Server (192.168.56.104)
 
 
 
 Implemented Controls:
 
--SSH allowed rule-
-Allow SSH Access
+-Http and dns allowed rule-
+Protocol: TCP
+Destination Port: 53 and 80
+Source: LAN Subnet
+Protocol: Any
+Destination: Any
+Action: Pass
+
+Rule image:
+![Rule](caminho_da_imagem)
+
+Test on kali:
+![Rule](caminho_da_imagem)
+
+-other traffic blocked, example: SMB-
+log  SMB timeout:
+![Rule](caminho_da_imagem)
+
+test on kali:
+![Rule](caminho_da_imagem)
+
+
+-Http blocked rule-
 Protocol: TCP
 Destination Port: 22
 Source: LAN Subnet
 Block Unauthorized Traffic
 Protocol: Any
 Destination: Ubuntu Server
-Action: Pass
-Validation Tests
-SSH Access
+Action: Block
 
 Rule image:
+![Rule](caminho_da_imagem)
+test on kali:
+![Rule](caminho_da_imagem)
 
-Test on kali:
-
-Nmap ssh open:
 
 
 -Other traffic blocked rule-
@@ -57,27 +76,24 @@ Destination: Ubuntu Server
 Action: Block
 
 Rule image:
+![Rule](caminho_da_imagem)
 
-
-
--Http and dns allowed rule-
-Rule image:
-
-Test on kali:
-
-
--other traffic blocked, example: SMB-
-
-log  SMB timeout:
-
-test on kali:
-
--Http blocked rule-
+-SSH allowed rule-
+Allow SSH Access only
+Protocol: TCP
+Destination Port: 22
+Source: LAN Subnet
+Protocol: Any
+Destination: Ubuntu Server
+Action: Pass
 
 Rule image:
+![Rule](caminho_da_imagem)
 
-test on kali:
 
+
+-All Rules-
+![Rule](caminho_da_imagem)
 
 
 
