@@ -4,12 +4,18 @@ This project demonstrates the implementation of network segmentation and firewal
 
 The objective was to create a controlled network where access to a protected Ubuntu Server is restricted according to the principle of least privilege.
 
+
 Environment:
 
 -pfSense Firewall
+
 -Kali Linux
+
 -Ubuntu Server
+
 -VirtualBox
+
+
 
 
 Network Architecture:
@@ -26,7 +32,10 @@ Ubuntu Server (192.168.56.104)
 
 
 
+
 Implemented Controls(Rules):
+
+
 
 -Http and dns allowed rule-
 
