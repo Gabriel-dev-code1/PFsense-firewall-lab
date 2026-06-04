@@ -1,11 +1,15 @@
-Overview
+                                                OVERVIEW
+                                                
+##########################################################################################################################################
 
 This project demonstrates the implementation of network segmentation and firewall policies using pfSense in a virtualized lab environment.
 
 The objective was to create a controlled network where access to a protected Ubuntu Server is restricted according to the principle of least privilege.
 
+##########################################################################################################################################
 
-Environment:
+
+ENVIRONMENT:
 
 -pfSense Firewall
 
@@ -18,7 +22,7 @@ Environment:
 
 
 
-Network Architecture:
+NETWORK ARCHITECTURE:
 
 Kali Linux (192.168.56.103)
 
@@ -33,11 +37,11 @@ Ubuntu Server (192.168.56.104)
 
 
 
-Implemented Controls(Rules):
+IMPLEMENTED CONTROLS (RULES):
 
 
 
--Http and dns allowed rule-
+--Http and dns allowed rule--
 
 Protocol: TCP
 
@@ -51,6 +55,7 @@ Destination Port: 53 and 80
 
 Action: Pass
 
+
 Test on kali:                                                                                                                           
 
 ![Rule](screenshots/https_and_dns.png)
@@ -60,7 +65,7 @@ success!
 
 
 
--other traffic blocked, example: SMB-
+--Traffic blocked rule: SMB--
 
 log  SMB timeout:
 
@@ -71,16 +76,16 @@ log  SMB timeout:
 
 test on kali(timeout):
 
-![Test](timeout_smb.png)
+![Test](screenshots/timeout_smb.png)
 
-Sucess!
-
-
+Success!
 
 
 
 
--Http blocked rule-
+
+
+--Http blocked rule--
 
 Protocol: TCP
 
@@ -98,14 +103,14 @@ Block Unauthorized Traffic
 
 
 
-test on kali:
+test on kali terminal:
 
 ![Test](screenshots/http_blocked_test.png)
 
 
 
 
--Other traffic blocked rule-
+--Other traffic blocked rule--
 
 Protocol: TCP
 
@@ -134,7 +139,7 @@ Rule image:
 
 
 
--SSH allowed rule-
+--SSH allowed rule--
 
 Protocol: TCP
 
@@ -159,17 +164,18 @@ Rule image:
 ![Rule](screenshots/rule_allow_sshOnly.png)
 
 
-test on kali:
+test on kali terminal:
 
 ![Test](screenshots/ssh_allowed.png)
 
-nmap test on kali - only  ssh open:
+
+nmap test on kali terminal - only  ssh open:
 
 ![Test](screenshots/nmap_ssh_open.png)
 
 
 
--All Rules-
+--All Rules--
 
 ![Rule](screenshots/basic_rules.png)
 
