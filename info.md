@@ -1,4 +1,4 @@
-                                                OVERVIEW
+                                                       OVERVIEW
                                                 
 ##########################################################################################################################################
 
@@ -9,7 +9,7 @@ The objective was to create a controlled network where access to a protected Ubu
 ##########################################################################################################################################
 
 
-ENVIRONMENT:
+                                                        ENVIRONMENT
 
 -pfSense Firewall
 
@@ -22,7 +22,7 @@ ENVIRONMENT:
 
 
 
-NETWORK ARCHITECTURE:
+                                                      NETWORK ARCHITECTURE
 
 Kali Linux (192.168.56.103)
 
@@ -37,11 +37,11 @@ Ubuntu Server (192.168.56.104)
 
 
 
-IMPLEMENTED CONTROLS (RULES):
+                                                     IMPLEMENTED CONTROLS (RULES)
 
 
 
---Http and dns allowed rule--
+## Http and dns allowed rule
 
 Protocol: TCP
 
@@ -65,7 +65,7 @@ success!
 
 
 
---Traffic blocked rule: SMB--
+## Traffic blocked rule: SMB
 
 log  SMB timeout:
 
@@ -85,7 +85,7 @@ Success!
 
 
 
---Http blocked rule--
+## Http blocked rule
 
 Protocol: TCP
 
@@ -110,7 +110,7 @@ test on kali terminal:
 
 
 
---Other traffic blocked rule--
+## Other traffic blocked rule
 
 Protocol: TCP
 
@@ -139,7 +139,7 @@ Rule image:
 
 
 
---SSH allowed rule--
+## SSH allowed rule
 
 Protocol: TCP
 
@@ -175,13 +175,13 @@ nmap test on kali terminal - only  ssh open:
 
 
 
---All Rules--
+## All Rules
 
 ![Rule](screenshots/basic_rules.png)
 
 
 
-Traffic was monitored through pfSense firewall logs to validate policy enforcement.
+                              Traffic was monitored through pfSense firewall logs to validate policy enforcement.
 
 Security Concepts Demonstrated
 Network Segmentation
