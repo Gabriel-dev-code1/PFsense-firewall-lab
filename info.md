@@ -51,7 +51,7 @@ Destination Port: 53 and 80
 
 Action: Pass
 
-Test on kali:
+Test on kali:                                                                                                                           
 
 ![Rule](screenshots/https_and_dns.png)
 
@@ -66,11 +66,19 @@ log  SMB timeout:
 
 ![Log](screenshots/log_timeout_smb.png)
 
-test on kali:
 
-![Test](screenshots/timeout_smb.png)
+
+
+test on kali(timeout):
+
+![Test](no)
 
 Sucess!
+
+
+
+
+
 
 -Http blocked rule-
 
@@ -119,6 +127,10 @@ Block Unauthorized Traffic
 Rule image:
 
 ![Rule](screenshots/rule_block_othertraffic.png)
+
+
+
+
 
 
 
