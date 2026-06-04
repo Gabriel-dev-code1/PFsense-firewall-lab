@@ -1,0 +1,36 @@
+apagar: senha-duke1@
+--Downloads--
+
+download virtualbox
+download pfsense .isso
+
+--configuração--
+
+Requisitos:
+ram - 2GB
+CPU - 1 núcleo
+armazenamento - 16GB
+
+rede vm:
+adaptador 1 - modo  NAT (para o virtualbox acessar a internet)
+adaptador 2 - host-only (a vm ira se conectar com a rede do computador)
+
+--instalação do sistema operacional--
+
+na tela de instalação: ativar as interfaces em0 e em1 (nat e host-only)
+instalar CE caso não possua licença
+
+rede firewall:
+dentro do firewall, configurar ip da lan, seguindo a subnet do computador
+e ativando dhcp via cli.
+
+acessar interface gui pelo ip configurado e 
+
+
+--Rotina--
+Ao adicionar qualquer vm nova, deve se configurar a saída do pfsense via comando:
+#sudo ip route add default via 192.x.x.x
+Ao reiniciar vm, algumas configurações são perdidas e devem ser configuradas novamente
+são elas:
+DNS: #nano etc/resolv.conf e colocar 'nameserver 192.xxx ip do pfsense'
+HTTPS E PING: #ip route replace default via 192.x.x ip do pfsense
