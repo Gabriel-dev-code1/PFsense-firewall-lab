@@ -26,74 +26,80 @@ Ubuntu Server (192.168.56.104)
 
 
 
-Implemented Controls:
+Implemented Controls(Rules):
 
 -Http and dns allowed rule-
 Protocol: TCP
-Destination Port: 53 and 80
 Source: LAN Subnet
 Protocol: Any
 Destination: Any
+Destination Port: 53 and 80
 Action: Pass
 
-Rule image:
-![Rule](caminho_da_imagem)
-
 Test on kali:
-![Rule](caminho_da_imagem)
+![Rule](screenshots/https_and_dns.png)
+
+success!
 
 -other traffic blocked, example: SMB-
 log  SMB timeout:
-![Rule](caminho_da_imagem)
+![Log](screenshots/log_timeout_smb.png)
 
 test on kali:
-![Rule](caminho_da_imagem)
+![Test](screenshots/timeout_smb.png)
 
 
 -Http blocked rule-
 Protocol: TCP
-Destination Port: 22
 Source: LAN Subnet
-Block Unauthorized Traffic
 Protocol: Any
 Destination: Ubuntu Server
+Destination Port: 22
 Action: Block
+Block Unauthorized Traffic
 
-Rule image:
-![Rule](caminho_da_imagem)
 test on kali:
-![Rule](caminho_da_imagem)
+![Test](screenshots/http_blocked_test.png)
 
 
 
 -Other traffic blocked rule-
 Protocol: TCP
-Destination Port: 22
 Source: LAN Subnet
-Block Unauthorized Traffic
 Protocol: Any
 Destination: Ubuntu Server
+Destination Port: any
 Action: Block
+Block Unauthorized Traffic
 
 Rule image:
-![Rule](caminho_da_imagem)
+![Rule](screenshots/rule_block_othertraffic.png)
+
+
 
 -SSH allowed rule-
-Allow SSH Access only
 Protocol: TCP
-Destination Port: 22
 Source: LAN Subnet
 Protocol: Any
 Destination: Ubuntu Server
+Destination Port: 22
 Action: Pass
+Allow SSH Access only
 
 Rule image:
-![Rule](caminho_da_imagem)
+![Rule](screenshots/rule_allow_sshOnly.png)
+
+
+test on kali:
+![Test](screenshots/ssh_allowed.png)
+
+nmap test on kali - only  ssh open
+![Test](screenshots/nmap_ssh_open.png)
 
 
 
 -All Rules-
-![Rule](caminho_da_imagem)
+![Rule](screenshots/basic_rules.png)
 
 
 
@@ -102,7 +108,6 @@ Traffic was monitored through pfSense firewall logs to validate policy enforceme
 Security Concepts Demonstrated
 Network Segmentation
 Firewall Rule Management
-Least Privilege Access
 Traffic Filtering
 Log Analysis
 Secure Remote Administration
