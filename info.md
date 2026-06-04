@@ -71,7 +71,7 @@ log  SMB timeout:
 
 test on kali(timeout):
 
-![Test](no)
+![Test](timeout_smb.png)
 
 Sucess!
 
