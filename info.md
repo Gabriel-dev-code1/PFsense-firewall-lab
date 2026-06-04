@@ -29,76 +29,127 @@ Ubuntu Server (192.168.56.104)
 Implemented Controls(Rules):
 
 -Http and dns allowed rule-
+
 Protocol: TCP
+
 Source: LAN Subnet
+
 Protocol: Any
+
 Destination: Any
+
 Destination Port: 53 and 80
+
 Action: Pass
 
 Test on kali:
+
 ![Rule](screenshots/https_and_dns.png)
 
 success!
 
+
+
+
 -other traffic blocked, example: SMB-
+
 log  SMB timeout:
+
 ![Log](screenshots/log_timeout_smb.png)
 
 test on kali:
+
 ![Test](screenshots/timeout_smb.png)
 
+Sucess!
 
 -Http blocked rule-
+
 Protocol: TCP
+
 Source: LAN Subnet
+
 Protocol: Any
+
 Destination: Ubuntu Server
+
 Destination Port: 22
+
 Action: Block
+
 Block Unauthorized Traffic
 
+
+
 test on kali:
+
 ![Test](screenshots/http_blocked_test.png)
 
 
 
+
 -Other traffic blocked rule-
+
 Protocol: TCP
+
 Source: LAN Subnet
+
 Protocol: Any
+
 Destination: Ubuntu Server
+
 Destination Port: any
+
 Action: Block
+
 Block Unauthorized Traffic
 
+
+
+
 Rule image:
+
 ![Rule](screenshots/rule_block_othertraffic.png)
 
 
 
 -SSH allowed rule-
+
 Protocol: TCP
+
 Source: LAN Subnet
+
 Protocol: Any
+
 Destination: Ubuntu Server
+
 Destination Port: 22
+
 Action: Pass
+
 Allow SSH Access only
 
+
+
+
+
 Rule image:
+
 ![Rule](screenshots/rule_allow_sshOnly.png)
 
 
 test on kali:
+
 ![Test](screenshots/ssh_allowed.png)
 
-nmap test on kali - only  ssh open
+nmap test on kali - only  ssh open:
+
 ![Test](screenshots/nmap_ssh_open.png)
 
 
 
 -All Rules-
+
 ![Rule](screenshots/basic_rules.png)
 
 
